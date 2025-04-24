@@ -15,6 +15,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
+import java.util.Properties;
 
 @Configuration
 public class DatabaseConfig {
@@ -53,7 +54,8 @@ public class DatabaseConfig {
         adapter.setDatabase(Database.POSTGRESQL);
         adapter.setShowSql(true);
         adapter.setGenerateDdl(true);
-        adapter.setDatabasePlatform("org.hibernate.dialect.PostgreSQLDialect");
+        // Don't set the dialect explicitly, let Hibernate detect it
+        // adapter.setDatabasePlatform("org.hibernate.dialect.PostgreSQLDialect");
 
         return adapter;
     }
@@ -66,6 +68,17 @@ public class DatabaseConfig {
         emf.setDataSource(dataSource);
         emf.setJpaVendorAdapter(jpaVendorAdapter);
         emf.setPackagesToScan("org.example.habittracker.model");
+
+        // Explicitly set the interface to the standard JPA EntityManagerFactory
+        emf.setEntityManagerFactoryInterface(jakarta.persistence.EntityManagerFactory.class);
+
+        // Add additional Hibernate properties if needed
+        Properties jpaProperties = new Properties();
+        jpaProperties.put("hibernate.physical_naming_strategy",
+                "org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy");
+        // Add this to avoid the SchemaManager conflict
+        jpaProperties.put("hibernate.jakarta.persistence.schema-generation.database.action", "none");
+        emf.setJpaProperties(jpaProperties);
 
         return emf;
     }

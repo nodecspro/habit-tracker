@@ -1,13 +1,13 @@
 package org.example.habittracker.controller;
 
-import com.jfoenix.controls.JFXPasswordField;
-import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.example.habittracker.model.User;
 import org.example.habittracker.service.AuthService;
@@ -20,22 +20,22 @@ import java.io.IOException;
 public class AuthController {
 
     @FXML
-    private JFXTextField usernameField;
+    private TextField usernameField;
 
     @FXML
-    private JFXPasswordField passwordField;
+    private PasswordField passwordField;
 
     @FXML
-    private JFXTextField regUsernameField;
+    private TextField regUsernameField;
 
     @FXML
-    private JFXTextField emailField;
+    private TextField emailField;
 
     @FXML
-    private JFXPasswordField regPasswordField;
+    private PasswordField regPasswordField;
 
     @FXML
-    private JFXPasswordField confirmPasswordField;
+    private PasswordField confirmPasswordField;
 
     private AuthService authService;
 

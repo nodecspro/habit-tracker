@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.habittracker.controller.MainController"
-            styleClass="background">
+            fx:controller="org.example.habittracker.controller.MainController"
+            styleClass="themed-pane">
 
     <top>
         <HBox spacing="10" alignment="CENTER_LEFT" styleClass="header">
@@ -16,8 +16,8 @@
             </padding>
             <Label text="Habit Tracker" styleClass="app-title"/>
             <Region HBox.hgrow="ALWAYS"/>
-            <JFXButton text="Profile" onAction="#showProfile" styleClass="button-flat"/>
-            <JFXButton text="Logout" onAction="#handleLogout" styleClass="button-flat"/>
+            <Button text="Profile" onAction="#showProfile" styleClass="flat"/>
+            <Button text="Logout" onAction="#handleLogout" styleClass="flat"/>
         </HBox>
     </top>
 
@@ -26,9 +26,9 @@
             <padding>
                 <Insets top="20" right="10" bottom="20" left="10"/>
             </padding>
-            <JFXButton text="Dashboard" onAction="#showDashboard" styleClass="sidebar-button"/>
-            <JFXButton text="My Habits" onAction="#showHabits" styleClass="sidebar-button"/>
-            <JFXButton text="Statistics" onAction="#showStatistics" styleClass="sidebar-button"/>
+            <Button text="Dashboard" onAction="#showDashboard" styleClass="sidebar-button"/>
+            <Button text="My Habits" onAction="#showHabits" styleClass="sidebar-button"/>
+            <Button text="Statistics" onAction="#showStatistics" styleClass="sidebar-button"/>
         </VBox>
     </left>
 

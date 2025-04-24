@@ -34,6 +34,7 @@ module org.example.habittracker {
     opens org.example.habittracker.controller to javafx.fxml, spring.core;
     opens org.example.habittracker.model to spring.core, org.hibernate.orm.core;
     opens org.example.habittracker.config to spring.core;
+    opens org.example.habittracker.util to spring.core, spring.beans;
 
     // Экспортируем пакеты
     exports org.example.habittracker;
@@ -42,9 +43,10 @@ module org.example.habittracker {
     exports org.example.habittracker.service;
     exports org.example.habittracker.repository;
     exports org.example.habittracker.config;
+    exports org.example.habittracker.util;
 
     requires org.slf4j;
     requires ch.qos.logback.classic;
     requires ch.qos.logback.core;
-    requires com.jfoenix;
+    requires atlantafx.base;
 }

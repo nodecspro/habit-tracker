@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
-<?import com.jfoenix.controls.JFXDatePicker?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
@@ -10,7 +7,7 @@
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.habittracker.controller.StatisticsController"
-      spacing="20" styleClass="statistics-container">
+      spacing="20" styleClass="statistics-container, themed-pane">
 
     <padding>
         <Insets top="20" right="20" bottom="20" left="20"/>
@@ -19,15 +16,15 @@
     <Label text="Statistics" styleClass="section-title"/>
 
     <HBox spacing="10">
-        <JFXComboBox fx:id="habitComboBox" promptText="Select Habit" HBox.hgrow="ALWAYS"/>
-        <JFXDatePicker fx:id="startDatePicker" promptText="Start Date"/>
-        <JFXDatePicker fx:id="endDatePicker" promptText="End Date"/>
-        <JFXButton text="Apply" onAction="#applyFilter" styleClass="button-raised"/>
+        <ComboBox fx:id="habitComboBox" promptText="Select Habit" HBox.hgrow="ALWAYS" styleClass="themed-combo-box"/>
+        <DatePicker fx:id="startDatePicker" promptText="Start Date" styleClass="themed-date-picker"/>
+        <DatePicker fx:id="endDatePicker" promptText="End Date" styleClass="themed-date-picker"/>
+        <Button text="Apply" onAction="#applyFilter" styleClass="accent"/>
     </HBox>
 
-    <TabPane>
+    <TabPane styleClass="themed-tab-pane">
         <Tab text="Weekly View">
-            <BarChart fx:id="weeklyChart">
+            <BarChart fx:id="weeklyChart" styleClass="chart">
                 <xAxis>
                     <CategoryAxis label="Day"/>
                 </xAxis>
@@ -37,7 +34,7 @@
             </BarChart>
         </Tab>
         <Tab text="Monthly View">
-            <LineChart fx:id="monthlyChart">
+            <LineChart fx:id="monthlyChart" styleClass="chart">
                 <xAxis>
                     <CategoryAxis label="Day"/>
                 </xAxis>

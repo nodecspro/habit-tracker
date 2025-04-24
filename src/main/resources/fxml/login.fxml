@@ -5,13 +5,13 @@
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.VBox?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import com.jfoenix.controls.JFXPasswordField?>
-<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Button?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="org.example.habittracker.controller.AuthController"
-      spacing="20" alignment="CENTER" styleClass="background">
+      spacing="20" alignment="CENTER" styleClass="themed-pane">
 
     <padding>
         <Insets top="20" right="20" bottom="20" left="20"/>
@@ -19,22 +19,22 @@
 
     <Label text="Habit Tracker" styleClass="title-label"/>
 
-    <TabPane>
+    <TabPane styleClass="themed-tab-pane">
         <Tab text="Login">
-            <VBox spacing="15" alignment="CENTER">
-                <JFXTextField fx:id="usernameField" promptText="Username" styleClass="text-field"/>
-                <JFXPasswordField fx:id="passwordField" promptText="Password" styleClass="text-field"/>
-                <JFXButton text="Login" onAction="#handleLogin" styleClass="button-raised"/>
-                <JFXButton text="Guest Mode" onAction="#handleGuestLogin" styleClass="button-flat"/>
+            <VBox spacing="15" alignment="CENTER" styleClass="content-pane">
+                <TextField fx:id="usernameField" promptText="Username" styleClass="themed-text-field"/>
+                <PasswordField fx:id="passwordField" promptText="Password" styleClass="themed-password-field"/>
+                <Button text="Login" onAction="#handleLogin" styleClass="accent"/>
+                <Button text="Guest Mode" onAction="#handleGuestLogin" styleClass="flat"/>
             </VBox>
         </Tab>
         <Tab text="Register">
-            <VBox spacing="15" alignment="CENTER">
-                <JFXTextField fx:id="regUsernameField" promptText="Username" styleClass="text-field"/>
-                <JFXTextField fx:id="emailField" promptText="Email" styleClass="text-field"/>
-                <JFXPasswordField fx:id="regPasswordField" promptText="Password" styleClass="text-field"/>
-                <JFXPasswordField fx:id="confirmPasswordField" promptText="Confirm Password" styleClass="text-field"/>
-                <JFXButton text="Register" onAction="#handleRegister" styleClass="button-raised"/>
+            <VBox spacing="15" alignment="CENTER" styleClass="content-pane">
+                <TextField fx:id="regUsernameField" promptText="Username" styleClass="themed-text-field"/>
+                <TextField fx:id="emailField" promptText="Email" styleClass="themed-text-field"/>
+                <PasswordField fx:id="regPasswordField" promptText="Password" styleClass="themed-password-field"/>
+                <PasswordField fx:id="confirmPasswordField" promptText="Confirm Password" styleClass="themed-password-field"/>
+                <Button text="Register" onAction="#handleRegister" styleClass="accent"/>
             </VBox>
         </Tab>
     </TabPane>

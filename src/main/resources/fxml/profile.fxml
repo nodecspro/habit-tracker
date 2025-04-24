@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.habittracker.controller.ProfileController"
+      spacing="20" styleClass="profile-container">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="User Profile" styleClass="section-title"/>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Username:" GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass="profile-label"/>
+        <Label fx:id="usernameLabel" text="username" GridPane.rowIndex="0" GridPane.columnIndex="1" styleClass="profile-value"/>
+
+        <Label text="Email:" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="profile-label"/>
+        <Label fx:id="emailLabel" text="email@example.com" GridPane.rowIndex="1" GridPane.columnIndex="1" styleClass="profile-value"/>
+
+        <Label text="Account Created:" GridPane.rowIndex="2" GridPane.columnIndex="0" styleClass="profile-label"/>
+        <Label fx:id="createdAtLabel" text="2023-01-01" GridPane.rowIndex="2" GridPane.columnIndex="1" styleClass="profile-value"/>
+
+        <Label text="Total Habits:" GridPane.rowIndex="3" GridPane.columnIndex="0" styleClass="profile-label"/>
+        <Label fx:id="totalHabitsLabel" text="0" GridPane.rowIndex="3" GridPane.columnIndex="1" styleClass="profile-value"/>
+    </GridPane>
+
+    <Separator/>
+
+    <VBox spacing="10">
+        <Label text="Account Actions" styleClass="subsection-title"/>
+
+        <JFXButton text="Change Password" onAction="#handleChangePassword" styleClass="button-flat"/>
+        <JFXButton text="Delete Account" onAction="#handleDeleteAccount" styleClass="button-danger"/>
+    </VBox>
+</VBox>

@@ -1,0 +1,188 @@
+/* Основные цвета */
+* {
+    -fx-primary: #3f51b5;
+    -fx-primary-light: #757de8;
+    -fx-primary-dark: #002984;
+    -fx-secondary: #ff4081;
+    -fx-secondary-light: #ff79b0;
+    -fx-secondary-dark: #c60055;
+    -fx-light-grey: #f5f5f5;
+    -fx-medium-grey: #e0e0e0;
+    -fx-dark-grey: #757575;
+    -fx-background: #ffffff;
+    -fx-text: #212121;
+}
+
+/* Общие стили */
+.background {
+    -fx-background-color: -fx-background;
+}
+
+.label {
+    -fx-text-fill: -fx-text;
+}
+
+.title-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -fx-primary;
+}
+
+.section-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -fx-primary;
+}
+
+.subsection-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -fx-text;
+}
+
+/* Кнопки */
+.button-raised {
+    -fx-background-color: -fx-primary;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20 10 20;
+    -fx-background-radius: 5;
+}
+
+.button-raised:hover {
+    -fx-background-color: -fx-primary-light;
+}
+
+.button-flat {
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-primary;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20 10 20;
+}
+
+.button-flat:hover {
+    -fx-background-color: rgba(63, 81, 181, 0.1);
+}
+
+.button-danger {
+    -fx-background-color: transparent;
+    -fx-text-fill: #f44336;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20 10 20;
+}
+
+.button-danger:hover {
+    -fx-background-color: rgba(244, 67, 54, 0.1);
+}
+
+/* Текстовые поля */
+.text-field {
+    -fx-background-color: -fx-light-grey;
+    -fx-background-radius: 5;
+    -fx-padding: 10;
+}
+
+.text-area {
+    -fx-background-color: -fx-light-grey;
+    -fx-background-radius: 5;
+    -fx-padding: 10;
+}
+
+/* Боковая панель */
+.sidebar {
+    -fx-background-color: -fx-primary-dark;
+    -fx-min-width: 200px;
+}
+
+.sidebar-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 15 20 15 20;
+    -fx-alignment: CENTER_LEFT;
+    -fx-min-width: 180px;
+}
+
+.sidebar-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Верхняя панель */
+.header {
+    -fx-background-color: -fx-primary;
+    -fx-padding: 10;
+}
+
+.app-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+/* Контейнеры */
+.form-container {
+    -fx-background-color: -fx-background;
+    -fx-padding: 20;
+    -fx-max-width: 600px;
+}
+
+.statistics-container {
+    -fx-background-color: -fx-background;
+    -fx-padding: 20;
+}
+
+.profile-container {
+    -fx-background-color: -fx-background;
+    -fx-padding: 20;
+    -fx-max-width: 600px;
+}
+
+/* Статистика */
+.stat-box {
+    -fx-background-color: -fx-light-grey;
+    -fx-padding: 15;
+    -fx-background-radius: 5;
+    -fx-min-width: 150px;
+    -fx-min-height: 100px;
+}
+
+.stat-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: -fx-dark-grey;
+}
+
+.stat-value {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -fx-primary;
+}
+
+/* Профиль */
+.profile-label {
+    -fx-font-weight: bold;
+}
+
+.profile-value {
+    -fx-text-fill: -fx-dark-grey;
+}
+
+/* Календарь */
+.calendar-day {
+    -fx-background-color: -fx-light-grey;
+    -fx-background-radius: 5;
+    -fx-padding: 10;
+    -fx-min-width: 40px;
+    -fx-min-height: 40px;
+    -fx-alignment: center;
+}
+
+.calendar-day-completed {
+    -fx-background-color: -fx-primary-light;
+    -fx-text-fill: white;
+}
+
+.calendar-day-today {
+    -fx-border-color: -fx-primary;
+    -fx-border-width: 2;
+    -fx-border-radius: 5;
+}

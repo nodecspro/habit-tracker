@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.VBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXButton?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.habittracker.controller.AuthController"
+      spacing="20" alignment="CENTER" styleClass="background">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Habit Tracker" styleClass="title-label"/>
+
+    <TabPane>
+        <Tab text="Login">
+            <VBox spacing="15" alignment="CENTER">
+                <JFXTextField fx:id="usernameField" promptText="Username" styleClass="text-field"/>
+                <JFXPasswordField fx:id="passwordField" promptText="Password" styleClass="text-field"/>
+                <JFXButton text="Login" onAction="#handleLogin" styleClass="button-raised"/>
+                <JFXButton text="Guest Mode" onAction="#handleGuestLogin" styleClass="button-flat"/>
+            </VBox>
+        </Tab>
+        <Tab text="Register">
+            <VBox spacing="15" alignment="CENTER">
+                <JFXTextField fx:id="regUsernameField" promptText="Username" styleClass="text-field"/>
+                <JFXTextField fx:id="emailField" promptText="Email" styleClass="text-field"/>
+                <JFXPasswordField fx:id="regPasswordField" promptText="Password" styleClass="text-field"/>
+                <JFXPasswordField fx:id="confirmPasswordField" promptText="Confirm Password" styleClass="text-field"/>
+                <JFXButton text="Register" onAction="#handleRegister" styleClass="button-raised"/>
+            </VBox>
+        </Tab>
+    </TabPane>
+</VBox>

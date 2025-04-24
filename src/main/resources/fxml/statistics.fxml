@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.habittracker.controller.StatisticsController"
+      spacing="20" styleClass="statistics-container">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Statistics" styleClass="section-title"/>
+
+    <HBox spacing="10">
+        <JFXComboBox fx:id="habitComboBox" promptText="Select Habit" HBox.hgrow="ALWAYS"/>
+        <JFXDatePicker fx:id="startDatePicker" promptText="Start Date"/>
+        <JFXDatePicker fx:id="endDatePicker" promptText="End Date"/>
+        <JFXButton text="Apply" onAction="#applyFilter" styleClass="button-raised"/>
+    </HBox>
+
+    <TabPane>
+        <Tab text="Weekly View">
+            <BarChart fx:id="weeklyChart">
+                <xAxis>
+                    <CategoryAxis label="Day"/>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis label="Completion"/>
+                </yAxis>
+            </BarChart>
+        </Tab>
+        <Tab text="Monthly View">
+            <LineChart fx:id="monthlyChart">
+                <xAxis>
+                    <CategoryAxis label="Day"/>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis label="Completion Rate"/>
+                </yAxis>
+            </LineChart>
+        </Tab>
+        <Tab text="Calendar View">
+            <GridPane fx:id="calendarGrid" alignment="CENTER">
+                <!-- Календарь будет заполнен программно -->
+            </GridPane>
+        </Tab>
+    </TabPane>
+
+    <HBox spacing="20" alignment="CENTER">
+        <VBox alignment="CENTER" styleClass="stat-box">
+            <Label text="Completion Rate" styleClass="stat-label"/>
+            <Label fx:id="completionRateLabel" text="0%" styleClass="stat-value"/>
+        </VBox>
+        <VBox alignment="CENTER" styleClass="stat-box">
+            <Label text="Current Streak" styleClass="stat-label"/>
+            <Label fx:id="currentStreakLabel" text="0 days" styleClass="stat-value"/>
+        </VBox>
+        <VBox alignment="CENTER" styleClass="stat-box">
+            <Label text="Best Streak" styleClass="stat-label"/>
+            <Label fx:id="bestStreakLabel" text="0 days" styleClass="stat-value"/>
+        </VBox>
+    </HBox>
+</VBox>

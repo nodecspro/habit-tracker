@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.habittracker.controller.MainController"
+            styleClass="background">
+
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="header">
+            <padding>
+                <Insets top="10" right="20" bottom="10" left="20"/>
+            </padding>
+            <Label text="Habit Tracker" styleClass="app-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <JFXButton text="Profile" onAction="#showProfile" styleClass="button-flat"/>
+            <JFXButton text="Logout" onAction="#handleLogout" styleClass="button-flat"/>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox spacing="10" styleClass="sidebar">
+            <padding>
+                <Insets top="20" right="10" bottom="20" left="10"/>
+            </padding>
+            <JFXButton text="Dashboard" onAction="#showDashboard" styleClass="sidebar-button"/>
+            <JFXButton text="My Habits" onAction="#showHabits" styleClass="sidebar-button"/>
+            <JFXButton text="Statistics" onAction="#showStatistics" styleClass="sidebar-button"/>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane fx:id="contentArea">
+            <!-- Здесь будет отображаться содержимое -->
+        </StackPane>
+    </center>
+</BorderPane>
